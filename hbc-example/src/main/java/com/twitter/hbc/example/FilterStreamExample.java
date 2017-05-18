@@ -61,8 +61,8 @@ public class FilterStreamExample {
   public static void main(String[] args) {
 
     try {
-      FilterStreamExample.run("pFHyz42K2bOYHdufeI0DdF6tz","glCgvfuqM0M8k9rLaYTHW4gfO1HmQ9HvLLMfS7S2N6JHLJBRRv",
-              "810170787692969984-GQ4y9UmRyVopZDXjNbKGykO1VbDCuIV","yGcEGDKepg1YHSpLXkXYyJC3VvOsoHYkg8qIsm2LJcGxM");
+      FilterStreamExample.run("consumerKey","consumerService",
+              "token","secret");
     } catch (InterruptedException e) {
       System.out.println(e);
     }

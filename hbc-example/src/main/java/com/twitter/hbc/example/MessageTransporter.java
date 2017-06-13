@@ -15,6 +15,7 @@ public class MessageTransporter implements Runnable {
 
     public MessageTransporter(String message){
         this.message = message;
+        this.message = "{ \"Type\": \"Twitter\"," + "\"Payload\": " + this.message + "}";
         run();
     }
 
@@ -22,7 +23,7 @@ public class MessageTransporter implements Runnable {
     public void run() {
 
         try {
-            URL url = new URL("http://localhost:8080/publishServer/service/format");
+            URL url = new URL("http://192.168.0.5:8080/procons/rest/format");
             HttpURLConnection client = null;
             client = (HttpURLConnection) url.openConnection();
             client.setRequestMethod("POST");

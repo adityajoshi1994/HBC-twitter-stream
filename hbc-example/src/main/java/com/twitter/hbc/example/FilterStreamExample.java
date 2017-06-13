@@ -31,7 +31,7 @@ public class FilterStreamExample {
     BlockingQueue<String> queue = new LinkedBlockingQueue<String>(10000);
     StatusesFilterEndpoint endpoint = new StatusesFilterEndpoint();
     // add some track terms
-    endpoint.trackTerms(Lists.newArrayList("IPL"));
+    endpoint.trackTerms(Lists.newArrayList("UCI","UCB"));
 
     Authentication auth = new OAuth1(consumerKey, consumerSecret, token, secret);
     // Authentication auth = new BasicAuth(username, password);
@@ -49,6 +49,7 @@ public class FilterStreamExample {
 
     // Do whatever needs to be done with messages
     for (int msgRead = 0; msgRead < 1000; msgRead++) {
+      Thread.sleep(10000);
       String msg = queue.take();
       System.out.println(msg);
       new MessageTransporter(msg);
@@ -61,8 +62,8 @@ public class FilterStreamExample {
   public static void main(String[] args) {
 
     try {
-      FilterStreamExample.run("consumerKey","consumerService",
-              "token","secret");
+      FilterStreamExample.run("pFHyz42K2bOYHdufeI0DdF6tz","glCgvfuqM0M8k9rLaYTHW4gfO1HmQ9HvLLMfS7S2N6JHLJBRRv",
+              "810170787692969984-GQ4y9UmRyVopZDXjNbKGykO1VbDCuIV","yGcEGDKepg1YHSpLXkXYyJC3VvOsoHYkg8qIsm2LJcGxM");
     } catch (InterruptedException e) {
       System.out.println(e);
     }
